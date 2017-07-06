@@ -18,9 +18,9 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
           // Adding a class of animal to our button
           a.addClass("animalButton");
           // Adding a data-attribute
-          a.attr("data-name", animalsArray[i]);
+          a.attr("data-name", animalArray[i]);
           // Providing the initial button text
-          a.text(animalsArray[i]);
+          a.text(animalArray[i]);
           // Adding the button to the buttons-view div
           $("#gifs-appear-here").append(a);
         }
@@ -55,7 +55,7 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
             var results = response.data;
 
             // Looping over every result item
-            $("#gifPanel").empty();
+            $("#gifs-appear-here").empty();
 
             for (var i = 0; i < results.length; i++) {
 
@@ -66,6 +66,7 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
             var p = $("<p>").text("Rating: " + rating);
 
             var animalImage = $("<img>");
+            
             animalImage.attr("src", results[i].images.fixed_height.url);
 
             gifDiv.prepend(p);
