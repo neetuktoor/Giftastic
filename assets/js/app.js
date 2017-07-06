@@ -1,7 +1,7 @@
 // initalize variables
 var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "elephant", "lion", "deer", "rabbit"];
-var apiKey = "d717d9d1126c4211b02b4fd33716203c";
-var rating = "pg";
+// var apiKey = "d717d9d1126c4211b02b4fd33716203c";
+// var rating = "pg";
 // var limit = 10;
 
 // Function for rendering buttons for each animal in the array
@@ -27,7 +27,7 @@ var rating = "pg";
       }
 
 //add additional animals to the array
-      $("#add-animal").on("click", function(event) {
+      $("button").on("click", function(event) {
         event.preventDefault();
         var animal = $("#animal-input").val().trim();
         $("#animal-input").val("");
@@ -41,9 +41,7 @@ var rating = "pg";
       function displayAnimals() {
 
         var animal = $(this).attr("data-name");
-        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=dc6zaTOxFJmzC&limit=10";
-        // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "api_key=d717d9d1126c4211b02b4fd33716203c&limit=10&lang=en";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=d717d9d1126c4211b02b4fd33716203c&limit=10&lang=en";
       
         // Performing our AJAX GET request      
           $.ajax({
@@ -58,7 +56,7 @@ var rating = "pg";
 
             // Looping over every result item
             $("#gifPanel").empty();
-            
+
             for (var i = 0; i < results.length; i++) {
 
             var gifDiv = $("<div class='item'>");
