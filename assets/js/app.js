@@ -8,7 +8,7 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
       function renderButtons() {
 
         // (this is necessary otherwise you will have repeat buttons)
-        $("#gifs-appear-here").empty();
+        $("#buttonPanel").empty();
 
         //looping through the array of animals
         for (var i = 0; i < animalArray.length; i++) {
@@ -22,16 +22,16 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
           // Providing the initial button text
           a.text(animalArray[i]);
           // Adding the button to the buttons-view div
-          $("#gifs-appear-here").append(a);
+          $("#buttonPanel").append(a);
         }
       }
 
 //add additional animals to the array
-      $("button").on("click", function(event) {
+      $("#submit-animal").on("click", function(event) {
         event.preventDefault();
         var animal = $("#animal-input").val().trim();
         $("#animal-input").val("");
-        animals.push(animal);
+        animalArray.push(animal);
         renderButtons();
       });
 
@@ -59,7 +59,11 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
 
             for (var i = 0; i < results.length; i++) {
 
-            var gifDiv = $("<div class='item'>");
+            // / Only taking action if the photo has an appropriate rating
+            if (results[i].rating !== "r" && results[i].rating !== "pg") {
+            
+            // Creating a div with the class "item"
+             var gifDiv = $("<div class='item'>");
 
             var rating = results[i].rating;
 
@@ -74,6 +78,7 @@ var animalArray = ["dog", "cat", "panda", "giraffe", "squirrel", "zebra", "eleph
 
             $("#gifs-appear-here").prepend(gifDiv);
           }
-        });
-      }
-  
+        }
+      });
+    
+

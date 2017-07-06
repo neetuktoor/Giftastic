@@ -2,35 +2,56 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>GIFtastic</title>
-	<link rel="stylesheet" href="assets/css/style.css">
+	<title>GIPHtastic</title>
+	<link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
 <body>
-	<div class = "container">
-	<!-- Where buttons will show up// -->
-		
-	  	</div>
+	<header>
+		<div class="headerText"> GIPHtastic</div>
+	</header>
+	
+	<br>
 
-	<!-- Where GIFS will appear -->  	
- 		<div id="gifs-appear-here">
-
-  		</div>
-
-
-    	<form id="animal-form">
-    		<label for="animal-input">Add an animal!</label>
-      		<input type="text" id="animal-input"><br>
-
-      		<!-- Button triggers new animal to be added -->
-      		<input id="submit-animal" type="submit" value="Submit">
-    	</form>
-
+	<div class = row>
+		<div id = "buttonPanel"></div>
+			<button data-animal="dog">dog</button>
+			<button data-animal="cat">cat</button>
+			<button data-animal="panda">panda</button>
+			<button data-animal="squirrel">squirrel</button>
+			<button data-animal="giraffe">giraffe</button>
+			<button data-animal="zebra">zebra</button>
+			<button data-animal="elephant">elephant</button>
+			<button data-animal="lion">lion</button>
+			<button data-animal="deer">deer</button>
+			<button data-animal="rabbit">rabbit</button>
 	</div>
 
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  	<script type="text/javascript" src="assets/js/app.js"></script>
+	<br>
+		
+	<div class = row>
+		<!-- Where GIFS will appear -->  	
+	 	<div id="gifs-appear-here"></div>
+	 </div>
+
+	 <br>
+
+	<div class = "row">
+	    <form id="animal-form">
+	    	<label for="animal-input">Add an animal!</label>
+	      	<input type="text" id="animal-input"><br>
+				
+			<br>
+			
+	      		<!-- Button triggers new animal to be added -->
+	      	<input id="submit-animal" type="submit" value="Add an animal">
+	    </form>
+	</div>
+
+</div>
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  	<script type="text/javascript" src="./assets/js/app.js"></script>
 
 </body>
 </html>
